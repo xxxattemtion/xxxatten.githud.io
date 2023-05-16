@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>梦呓吧</title>
+  <style>
+    /* 页面整体样式 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    /* 头部样式 */
+    header {
+      background-color: #f44336;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* 导航栏样式 */
+    nav {
+      background-color: #333;
+      padding: 10px;
+      color: #fff;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    /* 主要内容样式 */
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 漫画列表样式 */
+    .comic-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .comic-card {
+      background-color: #fafafa;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .comic-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .comic-card h3 {
+      margin: 10px 0;
+    }
+    .comic-card.clicked h3 {
+      color: red;
+    }
+
+
+    /* 页脚样式 */
+    footer {
+      background-color: #333;
+      padding: 10px;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>梦呓吧</h1>
+  </header>
+
+  <nav>
+    <a href="#">首页</a>
+    <a href="#">分类1</a>
+    <a href="#">分类2</a>
+    <a href="#">分类3</a>
+  </nav>
+
+  <div class="container">
+    <h2>最新漫画</h2>
+    <div class="comic-list">
+      <div class="comic-card" onclick="this.classList.add('clicked');window.location.href='index1.html'">
+        <img src="comic1.jpg" alt="全职法师">
+        <h3>全职法师</h3>
+      </div>
+      <div class="comic-card">
+        <img src="comic2.jpg" alt="大王饶命">
+        <h3>大王饶命</h3>
+      </div>
+      <div class="comic-card">
+        <img src="comic3.jpg" alt="大主宰">
+        <h3>大主宰</h3>
+      </div>
+      <!-- 添加更多漫画卡片 -->
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 梦呓吧
