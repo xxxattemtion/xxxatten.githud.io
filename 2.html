@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>漫画目录</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 10px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .comic-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .comic {
+            width: 45%;
+            margin: 10px;
+        }
+
+        .comic a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .comic img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .comic p {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 15px;
+            width: 60%;
+            max-width: 400px;
+            font-size: 16px;
+        }
+
+        .search-button {
+            padding: 15px 30px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-panel {
+            display: none;
+            margin-top: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .comic {
+                width: 90%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var searchButton = document.getElementById("search-button");
+            var searchPanel = document.getElementById("search-panel");
+            var searchInput = document.getElementById("search-input");
+
+            searchButton.addEventListener("click", function(event) {
+                event.preventDefault();
+                searchPanel.style.display = "block";
+                searchPanel.focus();
+                searchInput.focus();
+            });
+
+            searchPanel.addEventListener("blur", function(event) {
+                if (!searchPanel.contains(event.relatedTarget)) {
+                    searchPanel.style.display = "none";
+                }
+            });
+
+            var searchForm = document.getElementById("search-form");
+            searchForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                var searchTerm = searchInput.value.trim();
+                // 执行搜索操作
+                console.log("搜索漫画：" + searchTerm);
+                // 清空搜索输入框
+                searchInput.value = "";
+                // 跳转至指定页面
+                window.location.href = "http://m.qiman59.com";
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>漫画目录</h1>
+    <div class="comic-container">
+        <div class="comic">
+            <a href="3.html">
+                <img src="komic1.jpg" alt="全职法师">
+                <p>全职法师</p>
+            </a>
+        </div>
+        <div class="comic">
+            <a href="please-god-save-me.html">
+                <img src="komic2.jpg" alt="大王饶命">
+                <p>大王饶命</p>
+            </a>
+        </div>
+        <div class="comic">
+            <a href="the-great-ruler.html">
+                <img src="komic3.jpg" alt="大主宰">
+                <p>大主宰</p>
+            </a>
+        </div>
+        <div class="comic">
+            <a href="battle-through-the-heavens.html">
+                <img src="komic4.jpg" alt="武动乾坤">
+                <p>武动乾坤</p>
+            </a>
+        </div>
+    </div>
+    <div class="search-container">
+        <button id="search-button" class="search-button">搜索</button>
+    </div>
+    <div id="search-panel" class="search-panel">
+        <form id="search-form" class="search-form">
+            <input id="search-input" type="text" class="search-input" placeholder="搜索漫画">
+            <button type="submit" class="search-button">搜索</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .comic-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f0f0f0;
+            width: 100%;
+        }
+
+        .comic-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comic-images embed {
+            width: 100%;
+            height: 100vh; /* 使用视窗高度，纵向拉伸 */
+            object-fit: contain;
+        }
+
+        /* 添加响应式样式 */
+        @media (max-width: 600px) {
+            .comic-images {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="comic-container">
+        <div class="comic-images">
+            <!-- 漫画PDF文件 -->
+            <embed src="0002.pdf" type="application/pdf">
+        </div>
+        <div class="chapter-nav">
+            <button id="previous">上一章</button>
+            <button id="next">下一章</button>
+        </div>
+    </div>
+
+    <script>
+        const previousButton = document.getElementById("previous");
+        const nextButton = document.getElementById("next");
+
+        previousButton.addEventListener("click", () => {
+            // 处理上一章逻辑
+        });
+
+        nextButton.addEventListener("click", () => {
+            // 跳转到下一章的页面
+            window.location.href = "5.html";
+        });
+    </script>
+</body>
+</html>
+
+
